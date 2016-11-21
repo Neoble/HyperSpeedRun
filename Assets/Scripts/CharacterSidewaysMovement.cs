@@ -31,9 +31,9 @@ public class CharacterSidewaysMovement : MonoBehaviour
 
         GameManager.Instance.GameState = GameState.start;
 
-        anim = CharacterGO.GetComponent<>();
-        inputDetector = GetComponent<>();
-        controller = GetComponent<>();
+        //anim = CharacterGO.GetComponent<>();
+        //inputDetector = GetComponent<>();
+        //controller = GetComponent<>();
     }
 
 }
