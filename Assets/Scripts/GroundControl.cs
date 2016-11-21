@@ -4,11 +4,6 @@ using System.Collections;
 public class GroundControl : MonoBehaviour {
 
     float speed = .5f;
-
-    void Start () {
-	
-	}
-	
 	
 	void Update ()
     {
