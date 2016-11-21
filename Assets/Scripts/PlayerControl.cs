@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-    // Use this for initialization
 
     public GameControlScript control;
     CharacterController controller;
@@ -13,28 +12,21 @@ public class PlayerControl : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
 
     public CountdownScript count;
-    public PauseMenuScript pause;
-                                 
+    public PauseMenuScript pause;  
+                                
     public AudioSource powerupCollectSound;
     public AudioSource jumpSound;
     public AudioSource snagCollectSound;
 
-
     void Start()
     {
-
         controller = GetComponent<CharacterController>();
     }
-
-
     void Update()
     {
-
         if (controller.isGrounded && count.isCountDown)
         {
-
             GetComponent<Animation>().Play("run");
-
             if (pause.paused == false)
                 gameObject.GetComponent<AudioSource>().enabled = true;
             else
@@ -55,7 +47,6 @@ public class PlayerControl : MonoBehaviour
             }
 
         }
- 
         if (control.isGameOver)
         {
             gameObject.GetComponent<AudioSource>().enabled = false;
@@ -69,7 +60,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.name == "Powerup(Clone)")
         {
-            powerupCollectSound.Play(); 
+            powerupCollectSound.Play();
             control.PowerupCollected();
         }
         else if (other.gameObject.name == "Obstacle(Clone)")

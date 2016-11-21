@@ -17,19 +17,17 @@ public class CountdownScript : MonoBehaviour
 
     void Start()
     {
-        MonoBehaviour[] scriptComponentsGameControl = gameObject.GetComponents<MonoBehaviour>();   
-                                                            
+        MonoBehaviour[] scriptComponentsGameControl = gameObject.GetComponents<MonoBehaviour>(); 
+                                                                                                
         foreach (MonoBehaviour script in scriptComponentsGameControl)
         {
             script.enabled = false;
         }
-       
         wall1.GetComponent<GroundControl>().enabled = false;
         wall2.GetComponent<GroundControl>().enabled = false;
         ground.GetComponent<GroundControl>().enabled = false;
         character.GetComponent<Animation>().enabled = false;
         character.GetComponent<AudioSource>().enabled = false;
-
         StartCoroutine(CountdownFunction());
     }
 
@@ -41,7 +39,6 @@ public class CountdownScript : MonoBehaviour
         {
             if (countDown != 0)
             {
-             
                 guiTextCountdown.text = countDown.ToString();
                 yield return new WaitForSeconds(1);
             }
@@ -49,12 +46,10 @@ public class CountdownScript : MonoBehaviour
             {
                 guiTextCountdown.text = "GO!";
                 yield return new WaitForSeconds(1);
-              
                 countdownSound.Stop();
-                isCountDown = true; 
+                isCountDown = true;
             }
         }
-
         MonoBehaviour[] scriptComponentsGameControl = gameObject.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour script in scriptComponentsGameControl)
         {
